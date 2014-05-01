@@ -9,17 +9,19 @@
  */
 class BootstrapFormField extends DataExtension {
 
-
 	/**
 	 * @var array Attributes and values for the holder tag of the form field
 	 */
 	protected $holderAttributes = array();
 
-
 	protected $holderClasses = array(
-		"control-group"
+		"form-group"
 	);
 
+	public function setOwner($owner, $ownerBaseClass = null)
+	{
+		parent::setOwner($owner, $ownerBaseClass);
+	}
 
 	/**
 	 * Adds a HTML5 placeholder attribute to the form field
@@ -30,7 +32,6 @@ class BootstrapFormField extends DataExtension {
 	public function addPlaceholder($text) {
 		return $this->owner->setAttribute("placeholder",$text);
 	}
-
 	
 	/**
 	 * Adds a block of help text to the form field. (HTML safe).
@@ -44,8 +45,6 @@ class BootstrapFormField extends DataExtension {
 		return $this->owner;
 	}
 
-
-
 	/**
 	 * Adds a line of inline help text to a form field (HTML safe).
 	 * By default, this text appears to the right of a form field.
@@ -53,12 +52,10 @@ class BootstrapFormField extends DataExtension {
 	 * @param string $text The text to add
 	 * @return BootstrapFormField
 	 */
-	public function addInlineHelpText($text) {
+	/*public function addInlineHelpText($text) {
 		$this->owner->InlineHelpText = $text;
 		return $this->owner;
-	}
-
-
+	}*/
 
 	/**
 	 * Sets an attribute on the wrapper <div> for the formfield
@@ -72,8 +69,6 @@ class BootstrapFormField extends DataExtension {
 		$this->holderAttributes[$key] = $val;
 		return $this->owner;
 	}
-
-
 
 	/**
 	 * Returns the list of attributes suitable for an HTML tag
@@ -108,6 +103,7 @@ class BootstrapFormField extends DataExtension {
 	 */
 	public function HolderClasses() {
 		$this->loadErrorMessage();
+		$this->owner->addExtraClass("form-control");
 		return implode(" ",$this->holderClasses);
 	}
 
@@ -117,7 +113,7 @@ class BootstrapFormField extends DataExtension {
 	 * 
 	 * @todo allow setting error message as inline
 	 */
-	private function loadErrorMessage() {
+	protected function loadErrorMessage() {
 		if($this->owner->message) {
 			$this->addHolderClass("error");
 			$this->addHelpText($this->owner->message);

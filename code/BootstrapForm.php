@@ -12,24 +12,16 @@
  */
 class BootstrapForm extends Form {
 	
-
-
-
 	/**
 	 * @var string The template that will render this form
 	 */
 	protected $template = "BootstrapForm";
 
-
-
 	/**
 	 * @var string The layout of the form.
 	 * @see BootstrapForm::setLayout()
 	 */
-	protected $formLayout = "vertical";
-
-
-
+	protected $formLayout = "horizontal";
 
 	/**
 	 * Sets form to disable/enable inclusion of Bootstrap CSS
@@ -41,9 +33,6 @@ class BootstrapForm extends Form {
 		Config::inst()->set("BootstrapForm","bootstrap_included",$bool);
 	}
 
-
-
-
 	/**
 	 * Sets form to disable/enable inclusion of jQuery
 	 *
@@ -53,7 +42,6 @@ class BootstrapForm extends Form {
 	public static function set_jquery_included($bool = true) {
 		Config::inst()->set("BootstrapForm","jquery_included",$bool);
 	}
-
 
 	/**
 	 * Changes the templates of all the {@link FormField}
@@ -65,9 +53,6 @@ class BootstrapForm extends Form {
 	public static function apply_bootstrap_to_fieldlist($fields) {
 		$fields->bootstrapify();
 	}
-
-
-
 
 	/**
 	 * Applies the Bootstrap transformation to the fields and actiosn
@@ -81,8 +66,6 @@ class BootstrapForm extends Form {
 		return $this;
 	}
 
-
-
 	/**
 	 * Changes the templates of all the {@link FormField}
 	 * objects in a given {@link FieldList} object to those
@@ -95,8 +78,6 @@ class BootstrapForm extends Form {
 		self::apply_bootstrap_to_fieldlist($fields);
 		return $this;
 	}
-
-
 
 	/**
 	 * Sets the desired layout of the form. Options include:
@@ -114,8 +95,6 @@ class BootstrapForm extends Form {
 		return $this;
 	}
 
-
-
 	/**
 	 * Adds a "well," or sunken background and border, to the form
 	 *
@@ -125,8 +104,6 @@ class BootstrapForm extends Form {
 		return $this->addExtraClass("well");
 	}
 
-
-
 	/**
 	 * Includes the dependency if necessary, applies the Bootstrap templates,
 	 * and renders the form HTML output
@@ -134,19 +111,10 @@ class BootstrapForm extends Form {
 	 * @return string
 	 */
 	public function forTemplate() {
-		if(!$this->stat('bootstrap_included')) {
-			Requirements::css(BOOTSTRAP_FORMS_DIR.'/css/bootstrap.css');
-		}
-		if(!$this->stat('jquery_included')) {
-			Requirements::javascript(THIRDPARTY_DIR."/jquery/jquery.js");
-		}
-		Requirements::javascript(BOOTSTRAP_FORMS_DIR."/javascript/bootstrap_forms.js");
+		Requirements::javascript(BOOTSTRAP_FORMS_DIR . "/javascript/bootstrap_forms.js");
 		$this->addExtraClass("form-{$this->formLayout}");
 		$this->applyBootstrap();
 		return parent::forTemplate();
 	}
-
-
-
 
 }

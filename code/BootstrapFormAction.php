@@ -9,7 +9,6 @@
  */
 class BootstrapFormAction extends DataExtension {
 
-
 	/** 
 	 * Sets the style of button. Options include:
 	 * 	- "success"
@@ -27,8 +26,6 @@ class BootstrapFormAction extends DataExtension {
 		return $this->owner;
 	}
 
-
-
 	/** 
 	 * Sets the size of the button. Options include:
 	 * 	- "large"
@@ -42,6 +39,5 @@ class BootstrapFormAction extends DataExtension {
 		$this->owner->ButtonSize = trim(strtolower($size));
 		return $this->owner;
 	}
-
 
 }

@@ -16,15 +16,15 @@
 		<% loop Fields %>
 			$FieldHolder
 		<% end_loop %>
-		<div class="clear"><!-- --></div>
 	</fieldset>
 
 	<% if Actions %>
-	<div class="form-actions">
+	<fieldset class="form-actions text-right">
 		<% loop Actions %>
-			$Field
+			<%-- $Pos --%>
+				$Field
 		<% end_loop %>
-	</div>
+	</fieldset>
 	<% end_if %>
 <% if IncludeFormTag %>
 </form>

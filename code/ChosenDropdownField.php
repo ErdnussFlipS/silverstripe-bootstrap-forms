@@ -9,15 +9,11 @@
  */
 class ChosenDropdownField extends DropdownField {
 
-	
-
 	/**
 	 * @var int The number of items that need to appear in the dropdown
 	 *			in order to trigger a search bar
 	 */
 	public static $default_search_threshold = 12;
-
-
 
 	/**
 	 * Sets the search threshold for this dropdown
@@ -28,8 +24,6 @@ class ChosenDropdownField extends DropdownField {
 	public function setSearchThreshold($num) {
 		return $this->setAttribute('data-search-threshold', $num);		
 	}
-
-
 
 	/**
 	 * Builds the form field, sets default attributes, and includes JS

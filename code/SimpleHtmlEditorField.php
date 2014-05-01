@@ -9,20 +9,15 @@
  */
 class SimpleHtmlEditorField extends TextareaField {
 	
-
 	/**
 	 * @var string The default buttons to show on the editor
 	 */
 	public static $default_buttons = "bold,italic,bullist,link,formatselect";
 
-
-
 	/**
 	 * @var string The default formats to show in the format dropdown
 	 */
 	public static $default_blockformats = "p,h3,h4";
-
-
 
 	/**
 	 * Sets the buttons for this HTML editor
@@ -34,8 +29,6 @@ class SimpleHtmlEditorField extends TextareaField {
 		return $this->setAttribute('data-buttons', $buttons);		
 	}
 	
-
-
 	/**
 	 * Sets the available block formats for this HTML Editor
 	 *
@@ -46,8 +39,6 @@ class SimpleHtmlEditorField extends TextareaField {
 		return $this->setAttribute('data-blockformats', $formats);		
 	}
 
-
-
 	/**
 	 * Sets the default CSS for the editor, i.e. for typography
 	 *
@@ -57,8 +48,6 @@ class SimpleHtmlEditorField extends TextareaField {
 	public function setCSS($css) {
 		return $this->setAttribute('data-css', $css);		
 	}
-
-
 
 	/**
 	 * Builds the form field, includes JavaScript, and sets defaults

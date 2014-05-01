@@ -1,8 +1,8 @@
-name: BootstrapForm
+name: bootstrap-forms-v3
+After:
+  - 'framework/*'
+  - 'cms/*'
 ---
-BootstrapForm:
-  bootstrap_included: false
-  jquery_included: false
 FormField:
   extensions:
     - BootstrapFormField
@@ -18,6 +18,9 @@ FormAction:
 TextareaField:
   extensions:
     - BootstrapTextField
+CheckboxField:
+  extensions:
+    - BootstrapCheckboxField_Extension
 FieldList:
   extensions:
     - BootstrapFieldList

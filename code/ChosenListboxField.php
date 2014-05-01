@@ -7,8 +7,6 @@ class ChosenListboxField extends ListboxField {
 	 */
 	public static $default_search_threshold = 12;
 
-
-
 	/**
 	 * Sets the search threshold for this dropdown
 	 *
@@ -18,8 +16,7 @@ class ChosenListboxField extends ListboxField {
 	public function setSearchThreshold($num) {
 		return $this->setAttribute('data-search-threshold', $num);		
 	}
-    
-    
+        
     /**
      * Sets the Placeholder if the Field is empty
      * 
@@ -29,8 +26,6 @@ class ChosenListboxField extends ListboxField {
     public function setPlaceholder($str) {
         return $this->setAttribute('data-placeholder', $str);
     }
-
-
 
 	/**
 	 * Builds the form field, sets default attributes, and includes JS

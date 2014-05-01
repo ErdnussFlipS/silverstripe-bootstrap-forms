@@ -1,8 +1,6 @@
 <?php
 
-
 class BootstrapFieldList extends Extension {
-
 
 	public function bootstrapify() {
 		foreach($this->owner as $f) {
@@ -16,7 +14,6 @@ class BootstrapFieldList extends Extension {
 			if($f instanceof Tab) {
 				$f->Fields()->bootstrapify();
 			}
-			
 
 			$template = "Bootstrap{$f->class}_holder";			
 			if(SSViewer::hasTemplate($template)) {					
