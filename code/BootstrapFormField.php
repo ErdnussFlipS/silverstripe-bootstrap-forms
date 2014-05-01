@@ -18,6 +18,8 @@ class BootstrapFormField extends DataExtension {
 		"form-group"
 	);
 
+	protected $icon = '';
+
 	public function setOwner($owner, $ownerBaseClass = null)
 	{
 		parent::setOwner($owner, $ownerBaseClass);
@@ -118,6 +120,23 @@ class BootstrapFormField extends DataExtension {
 			$this->addHolderClass("error");
 			$this->addHelpText($this->owner->message);
 		}
+	}
+		
+	/**
+	 * Adds an icon to the input field.
+	 * 
+	 * @see http://twitter.github.io/bootstrap/base-css.html#icons
+	 *
+	 * @param string $icon The icon class
+	 * @return BootstrapFormField
+	 */
+	public function setIcon($icon) {
+		$this->icon = $icon;
+		return $this->owner;
+	}
+	
+	public function getIcon() {
+		return $this->icon;
 	}
 	
 }

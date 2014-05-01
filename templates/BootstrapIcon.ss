@@ -1,0 +1,1 @@
+<% if $Icon %><span class="glyphicon glyphicon-$Icon"></span><% if $Text %>$Text<% end_if %><% end_if %>

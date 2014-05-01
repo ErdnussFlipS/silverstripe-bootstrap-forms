@@ -7,7 +7,7 @@
  * @author Uncle Cheese <unclecheese@leftandmain.com>
  * @package bootstrap_forms
  */
-class BootstrapFormAction extends DataExtension {
+class BootstrapFormAction extends Extension {
 
 	/** 
 	 * Sets the style of button. Options include:
@@ -37,6 +37,12 @@ class BootstrapFormAction extends DataExtension {
 	 */
 	public function setSize($size) {
 		$this->owner->ButtonSize = trim(strtolower($size));
+		return $this->owner;
+	}
+
+	public function setIcon($icon)
+	{
+		$this->owner->ButtonIcon = trim(strtolower($icon));
 		return $this->owner;
 	}
 
