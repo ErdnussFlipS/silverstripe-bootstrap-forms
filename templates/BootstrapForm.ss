@@ -20,10 +20,14 @@
 
 	<% if Actions %>
 	<fieldset class="form-actions text-right">
-		<% loop Actions %>
-			<%-- $Pos --%>
+		<div class="form-group">
+			<div class="col-sm-offset-3 col-sm-9">
+			<% loop Actions %>
+				<%-- $Pos --%>
 				$Field
-		<% end_loop %>
+			<% end_loop %>
+			</div>
+		</div>
 	</fieldset>
 	<% end_if %>
 <% if IncludeFormTag %>
